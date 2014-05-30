@@ -5,31 +5,31 @@ let(:base_title) { "Ruby on Rails Tutorial" }
 
 	describe "Home Page" do
 		it "Should have the content 'Sample App'" do
-			visit '/static_pages/home'
+			visit root_path
 			expect(page).to have_content('Sample App')
 		
 		end
 		
 		it "Should have the right title" do
-			visit '/static_pages/home'
+			visit root_path
 			expect(page).to have_title("#{base_title}")
 		end
 
 		it "Should not have a custom title" do
-			visit '/static_pages/home'
+			visit root_path
 			expect(page).not_to have_title('| Home')
 		end
 	end
 	
 	describe "Help Page" do
 		it "Should have the content 'Help'" do
-			visit '/static_pages/help'
+			visit help_path
 			expect(page).to have_content('Help')
 
 		end
 
 		it "Should have the right title" do
-			visit '/static_pages/help'
+			visit help_path
 			expect(page).to have_title("#{base_title} | Help")
 		end
 
@@ -37,13 +37,13 @@ let(:base_title) { "Ruby on Rails Tutorial" }
 	
 	describe "About Page" do
 		it "Should have the content 'About Us'" do
-			visit '/static_pages/about'
+			visit about_path
 			expect(page).to have_content('About Us')
 
 		end
 
 		it "Should have the right title" do
-			visit '/static_pages/about'
+			visit about_path
 			expect(page).to have_title("#{base_title} | About Us")
 		end
 
@@ -52,13 +52,13 @@ let(:base_title) { "Ruby on Rails Tutorial" }
 
 	describe "Contact Page" do
 		it "Should have the content 'Contact'" do
-			visit '/static_pages/contact'
+			visit contact_path
 			expect(page).to have_content('Contact')
 
 		end
 
 		it "Should have the right title" do
-			visit '/static_pages/contact'
+			visit contact_path
 			expect(page).to have_title("#{base_title} | Contact")
 		end
 
